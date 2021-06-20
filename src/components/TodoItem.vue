@@ -1,7 +1,9 @@
 <template>
   <section class="todo">
+    <!-- For todo display. Displayed in default -->
     <div class="todo-wrapper" v-show="!todo.edit">
-      <input class="checkbox"
+      <input
+        class="checkbox"
         type="checkbox"
         :checked="todo.completed"
         @change="changeCompleted(todo.id)"
@@ -16,7 +18,10 @@
     </div>
     <!-- For edit input. Hidden in default -->
     <div class="todo-wrapper" v-show="todo.edit">
-      <input v-model="todo.title" type="text" >
+      <input
+        v-model="todo.title"
+        type="text"
+      >
       <div class="icons">
         <Icon @btn-click="editTodo(todo)" :className="'fas fa-check'"/>
       </div>

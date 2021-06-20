@@ -8,13 +8,15 @@
           placeholder="Enter a new to-do" 
       />
       <button>
-        <i class="fas fa-angle-right fa-2x"></i>
+        <Icon @btn-click="deleteTodo(todo.id)" :className="'fas fa-angle-right fa-2x'"/>
+        <!-- <i class="fas fa-angle-right fa-2x"></i> -->
       </button>
     </form>
   </section>
 </template>
 
 <script>
+import Icon from "./Icon.vue"
 import { mapActions, mapGetters } from "vuex"
 
 export default {
@@ -23,6 +25,9 @@ export default {
     return {
       title: ''
     }
+  },
+  components: {
+    Icon,
   },
   computed: mapGetters(["lastId"]),
   methods: {
